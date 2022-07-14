@@ -50,9 +50,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun division(view: View){
-        val firstNumber = findViewById<TextView>(R.id.textNumber1).text.toString().toInt()
-        val secondNumber = findViewById<TextView>(R.id.textNumber2).text.toString().toInt()
-        val result = (firstNumber / secondNumber).toString()
+        val firstNumber = findViewById<TextView>(R.id.textNumber1).text.toString().toDouble()
+        val secondNumber = findViewById<TextView>(R.id.textNumber2).text.toString().toDouble()
+        val result = (firstNumber / secondNumber).toString().format("%.2f")
         val intent = Intent(this,DisplayResultActivity::class.java).apply {
             putExtra(DIVISION,result)
             operation = DIVISION
